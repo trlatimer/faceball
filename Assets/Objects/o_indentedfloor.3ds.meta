@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d783754fb067f04999c7084bd3bf0f2
+guid: f7b4da42c14e7fa46b0cd6a73f316b11
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: -- default --
-    second: {fileID: 2100000, guid: 4f51acc35f4522a47a53b6be85a61c1d, type: 2}
+      name: material01
+    second: {fileID: 2100000, guid: 71591542339c94b41ab20e8253f9bd8a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -73,7 +73,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 180
+    normalSmoothAngle: 0
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
