@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 163744695298049779}
   - component: {fileID: 4064252269725922368}
+  - component: {fileID: -9154928641642747087}
+  - component: {fileID: 7527772643207685748}
   m_Layer: 0
   m_Name: p_wall
   m_TagString: Wall
@@ -46,6 +48,39 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 8, z: 0.25}
   m_Center: {x: 0, y: 4, z: 0}
+--- !u!114 &-9154928641642747087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863488135373456700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"collection":{"$content":[{"name":"v_shake","value":{"$content":0.25,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"v_health","value":{"$content":5.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!114 &7527772643207685748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8863488135373456700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: cbf2e06cd6e671a409a1e7ea73cd0a0e, type: 2}
 --- !u!1001 &9008265126841117210
 PrefabInstance:
   m_ObjectHideFlags: 0
