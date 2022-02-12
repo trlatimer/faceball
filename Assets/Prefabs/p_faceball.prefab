@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 7099515063662129041}
   - component: {fileID: -2834623959742653476}
   - component: {fileID: 9056634182376958396}
+  - component: {fileID: 1893172568433900645}
+  - component: {fileID: -5782335122226716776}
   m_Layer: 0
   m_Name: p_faceball
   m_TagString: Player
@@ -173,7 +175,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 10
   m_AngularDrag: 20
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
@@ -226,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 4b1743876e497504c8dc018b2822ff5b, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -240,13 +242,13 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: ac7dec9053eec0742900b3fa9ca27cd0, type: 2}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1893172568433900645}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -266,6 +268,7 @@ MonoBehaviour:
       Controller 1.03/trigger]
   - m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
     m_ActionId: 1fd0316b-896e-46e2-9d35-bd51925ef91a
     m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/GC101
       Controller 1.03/stick/up,/GC101 Controller 1.03/stick/down,/GC101 Controller
@@ -307,6 +310,11 @@ MonoBehaviour:
     m_ActionId: 42fe4e37-7da7-4e3b-92ca-401c04e358ef
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
+=======
+    m_ActionId: 7f43c173-b1be-44af-80dd-d02f9fa6367e
+    m_ActionName: Player/Dodge[/Keyboard/space,/Mouse/rightButton]
+  m_NeverAutoSwitchControlSchemes: 1
+>>>>>>> d9fca90c890b4a71f595941be30dec74f37284e8
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -318,7 +326,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5203348941625401700}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
   m_Name: 
@@ -327,6 +335,36 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: ac7dec9053eec0742900b3fa9ca27cd0, type: 2}
+--- !u!114 &1893172568433900645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5203348941625401700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c3b305afed3c1499d26e42aa7833b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!143 &-5782335122226716776
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5203348941625401700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 1
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1633283067599049733
 PrefabInstance:
   m_ObjectHideFlags: 0
