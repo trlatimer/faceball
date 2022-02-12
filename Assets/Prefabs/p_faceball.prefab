@@ -268,53 +268,9 @@ MonoBehaviour:
       Controller 1.03/trigger]
   - m_PersistentCalls:
       m_Calls: []
-<<<<<<< HEAD
-    m_ActionId: 1fd0316b-896e-46e2-9d35-bd51925ef91a
-    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/GC101
-      Controller 1.03/stick/up,/GC101 Controller 1.03/stick/down,/GC101 Controller
-      1.03/stick/left,/GC101 Controller 1.03/stick/right,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4e7eee70-141b-4709-8fd7-de9e68aa698a
-    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c8110eba-088c-4ab2-af6f-d2b50c0ca3a4
-    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: fdcdd77e-db69-424d-9fc8-2bb288a464ec
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ac636e30-8f50-4599-bb26-726a5d5fda41
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b315a8d8-d559-415a-9752-ec039c277fc1
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 28d83148-33a6-4ac3-9766-345bc3b71850
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4dd44647-3287-48c3-9069-a5a09c9ce90d
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 97a44c51-49f2-4f74-92aa-502b8cf4dc0e
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 42fe4e37-7da7-4e3b-92ca-401c04e358ef
-    m_ActionName: UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 0
-=======
     m_ActionId: 7f43c173-b1be-44af-80dd-d02f9fa6367e
     m_ActionName: Player/Dodge[/Keyboard/space,/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 1
->>>>>>> d9fca90c890b4a71f595941be30dec74f37284e8
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
