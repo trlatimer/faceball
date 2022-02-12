@@ -306,7 +306,7 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 42fe4e37-7da7-4e3b-92ca-401c04e358ef
     m_ActionName: UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 1
+  m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
