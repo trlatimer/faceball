@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
@@ -23,11 +24,12 @@ public class MainMenu : MonoBehaviour
 
     public void OnSplitScreen_Click()
     {
-        // TODO Implement split screen lobby and joining
+        SceneManager.LoadScene(1);
     }
 
     public void OnJoinGame_Click()
     {
+        NetworkManager.instance.networkMode = true;
         NetworkManager.instance.ConnectToMaster();
     }
 

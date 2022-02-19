@@ -8,6 +8,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public int maxPlayers = 10;
     public MainMenu mainMenu;
+    public bool networkMode = false;
 
     public static NetworkManager instance;
 

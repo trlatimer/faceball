@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPun
 {
+    [Header("Players")]
     public string playerPrefabLocation;
-    public GameObject[] players;
+    public PlayerController[] players;
     public Transform[] spawnPoints;
     public int alivePlayers;
 
     private int playersInGame;
-    private PhotonView photonView;
 
     public PlayerInputManager inputManager;
 
@@ -22,16 +22,19 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        inputManager.enabled = false;
-        photonView = gameObject.GetPhotonView();
     }
 
     private void Start()
     {
-        players = new GameObject[PhotonNetwork.PlayerList.Length];
-        alivePlayers = players.Length;
+        NetworkManager netManager = FindObjectOfType<NetworkManager>();
+        if (netManager != null && netManager.networkMode)
+        {
+            inputManager.enabled = false;
+            players = new PlayerController[PhotonNetwork.PlayerList.Length];
+            alivePlayers = players.Length;
 
-        photonView.RPC("InGame", RpcTarget.AllBuffered);
+            photonView.RPC("InGame", RpcTarget.AllBuffered);
+        }
     }
 
     [PunRPC]
@@ -52,6 +55,6 @@ public class GameManager : MonoBehaviour
 
 
         // Initialize the player
-        playerObj.GetPhotonView().RPC("Initialize", RpcTarget.All, PhotonNetwork.LocalPlayer);
+        playerObj.GetComponent<PlayerController>().photonView.RPC("Initialize", RpcTarget.All, PhotonNetwork.LocalPlayer);
     }
 }

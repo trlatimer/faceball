@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "b95c10da-2b5d-4b58-86e9-ff8a65bcd766",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -82,7 +82,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "MouseKeyboard",
+                    "groups": "Keyboard2",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -104,7 +104,7 @@
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "MouseKeyboard",
+                    "groups": "Keyboard2",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -126,7 +126,7 @@
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "MouseKeyboard",
+                    "groups": "Keyboard2",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -148,7 +148,7 @@
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "MouseKeyboard",
+                    "groups": "Keyboard2",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -193,6 +193,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "MouseKeyboard",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "522723cc-c39d-4a43-9484-a3317d261c50",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -257,6 +268,17 @@
                 {
                     "devicePath": "<Gamepad>",
                     "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Keyboard2",
+            "bindingGroup": "Keyboard2",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
