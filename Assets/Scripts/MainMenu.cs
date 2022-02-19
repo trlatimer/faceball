@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public TMP_Text playerList;
     public TMP_Text roomInfo;
+    public Button startGameButton;
 
     #region Main Screen
     public void OnPlayerName_ValueChanged(TMP_InputField playerName)
@@ -41,6 +42,10 @@ public class MainMenu : MonoBehaviour
     {
         mainScreen.SetActive(false);
         roomScreen.SetActive(true);
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            startGameButton.enabled = false;
+        }
 
         gameObject.GetPhotonView().RPC("UpdateRoomUI", RpcTarget.All);
     }
@@ -68,7 +73,12 @@ public class MainMenu : MonoBehaviour
 
     public void OnStartGame_Click()
     {
-        NetworkManager.instance.JoinOrCreateRoom();
+        // Hide the room
+        PhotonNetwork.CurrentRoom.IsOpen = false;
+        PhotonNetwork.CurrentRoom.IsVisible = false;
+
+        // Tell everyone to load the game
+        NetworkManager.instance.photonView.RPC("ChangeScene", RpcTarget.All, "scene_stage");
     }
     #endregion
 }
