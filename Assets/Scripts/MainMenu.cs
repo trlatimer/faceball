@@ -71,6 +71,7 @@ public class MainMenu : MonoBehaviour
         NetworkManager.instance.LeaveRoom();
         roomScreen.SetActive(false);
         mainScreen.SetActive(true);
+        NetworkManager.instance.networkMode = false;
     }
 
     public void OnStartGame_Click()

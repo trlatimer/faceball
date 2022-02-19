@@ -64,6 +64,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         ChangeScene("menu_scene");
+        networkMode = false;
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
