@@ -57,7 +57,7 @@ public class MainMenu : MonoBehaviour
     {
         playerList.text = "";
         roomInfo.text = "";
-        foreach (Player player in PhotonNetwork.PlayerList)
+        foreach (Photon.Realtime.Player player in PhotonNetwork.PlayerList)
         {
             playerList.text += player.NickName + "\n";
         }

@@ -67,7 +67,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         networkMode = false;
     }
 
-    public override void OnPlayerLeftRoom(Player otherPlayer)
+    public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
         // TODO reduce alive players
         // Check win conditions

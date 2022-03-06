@@ -1,5 +1,6 @@
 using Photon.Pun;
 using Photon.Realtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,7 +9,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviourPun
 {
-    [Header("Info")]
+    [Header("Player Info")]
     public int id;
     private int curAttackerId;
 
@@ -20,10 +21,18 @@ public class PlayerController : MonoBehaviourPun
     public int kills;
     public bool dead;
 
+    [Header("Bullets")]
+    public GameObject bulletPrefab;
+    public Transform bulletSpawnLoc;
+    public int damage;
+    public float shootRate;
+    public float bulletSpeed;
+    private float lastShootTime;
+
     [Header("Components")]
     public Rigidbody rig;
     public ScriptMachine movementScript;
-    public Player photonPlayer;
+    public Photon.Realtime.Player photonPlayer;
     //public PlayerWeapon weapon;
     //public MeshRenderer mr;
 
@@ -36,10 +45,10 @@ public class PlayerController : MonoBehaviourPun
         id = player.ActorNumber;
         photonPlayer = player;
 
-        // Add to players list
+        // Add to player list
         GameManager.instance.players[id - 1] = this;
 
-        // not local player
+        // if not local player
         if (!photonView.IsMine)
         {
             GetComponentInChildren<Camera>().gameObject.SetActive(false);
@@ -60,6 +69,28 @@ public class PlayerController : MonoBehaviourPun
         }
     }
 
+    public void Shoot(Vector3 spawnPosition, Quaternion direction)
+    {
+        if (NetworkManager.instance.networkMode)
+            photonView.RPC("SpawnBullet", RpcTarget.All, damage, spawnPosition, direction);
+        else
+            SpawnBullet(damage, spawnPosition, direction);
+    }
+
+    [PunRPC]
+    public GameObject SpawnBullet(int damage, Vector3 spawnLoc, Quaternion dir)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, spawnLoc, dir);
+        bullet.GetComponent<Bullet>().Initialize(damage, id, photonView.IsMine);
+        return bullet;
+    }
+
+    [PunRPC]
+    public void TakeDamage(int attackerId, int damage)
+    {
+        Debug.Log($"Player {id} takes {damage} damage from player {attackerId}");
+    }
+
     //private void Update()
     //{
     //    if (photonView.IsMine && !dead)
@@ -68,13 +99,13 @@ public class PlayerController : MonoBehaviourPun
     //    }
     //}
 
-    private void Move(Vector2 input)
-    {
-        // Calculate direction relative to forward direction
-        Vector3 dir = (transform.forward * input.y + transform.right * input.x) * moveSpeed;
-        dir.y = rig.velocity.y;
+    //private void Move(Vector2 input)
+    //{
+    //    // Calculate direction relative to forward direction
+    //    Vector3 dir = (transform.forward * input.y + transform.right * input.x) * moveSpeed;
+    //    dir.y = rig.velocity.y;
 
-        // Set as velocity
-        rig.velocity = dir;
-    }
+    //    // Set as velocity
+    //    rig.velocity = dir;
+    //}
 }
